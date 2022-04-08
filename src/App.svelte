@@ -9,12 +9,13 @@
 	import { onMount } from 'svelte';
 
 	// Brand variables (remove export later)
-	let name = "world";
+	let name = "AMS Detectives";
 	let icon_light = './images/icon-light.svg';
 	let icon_dark = './images/icon-dark.svg';
-	let carousel_images = ['https://st3.depositphotos.com/1316534/34178/i/1600/depositphotos_341780746-stock-photo-vod-service-on-television-tv.jpg',
-	 											 'https://st3.depositphotos.com/1518767/14149/i/1600/depositphotos_141491564-stock-photo-illustration-of-circuit-board.jpg',
-											   'https://st2.depositphotos.com/16843704/47927/i/1600/depositphotos_479278436-stock-photo-carrara-italy-june-2021-woman.jpg']
+	let carousel_images = ['./images/spyads.jpeg',
+	 											 './images/spycase.jpeg',
+												 './images/spynotes.jpeg',
+											   'https://st.depositphotos.com/2196544/2312/i/600/depositphotos_23120686-stock-photo-sneaking-spy.jpg']
 
 	let isdark = false;
 
@@ -40,8 +41,8 @@
 			<img class:is-hidden="{!isdark}" src={icon_dark} alt="Dark spy icon">
 		</a>
     <div class="tabs">
-      <a>Link 1</a>
-      <a class="active">Link 2</a>
+      <a class="active" href="null">Link 1</a>
+      <a>Link 2</a>
     </div>
   </div>
   <div class="nav-right">
@@ -49,11 +50,11 @@
   </div>
 </nav>
 <h1 class="text-center">{name}</h1>
-<h3 class="text-center">Have a case needing to be solved?</h3>
+<h3 class="text-center">Have a case that needs to be solved?</h3>
 <h3 class="text-center">Us here at {name} have great detective skills and can solve any case you need!</h3>
 <div class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="3000" width="480" height="270">
+    <div class="carousel-item active" data-bs-interval="3000">
 			<img src={carousel_images[0]}>
     </div>
     <div class="carousel-item" data-bs-interval="3000">
@@ -62,6 +63,9 @@
     <div class="carousel-item" data-bs-interval="3000">
 			<img src={carousel_images[2]}>
     </div>
+		<div class="carousel-item black-border" data-bs-interval="3000">
+			<img src={carousel_images[3]}>
+		</div>
   </div>
 </div>
 
@@ -87,5 +91,9 @@
 	  margin-right: auto;
 	  width: 50%;
 		width: 500px;
+	}
+
+	.black-border img {
+		border: 3px solid black;
 	}
 </style>
